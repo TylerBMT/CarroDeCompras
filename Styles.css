@@ -1,0 +1,117 @@
+body{
+    background-color: rgb(0, 0, 0);
+    font-family: Arial, sans-serif;
+}
+.contenedor{
+    display: flex;
+    flex-direction: row;
+}
+.seccion-izquierda{
+    margin-bottom: 0%;
+    width: 70%;
+}
+.seccion-derecha{
+    width: 40%;
+}
+.barra-superior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    padding: 15px 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(169,119,36,255);
+}
+.Img_Logo{
+    width: 20%;
+    padding-left: 70%;
+}
+.Logo{
+    margin-top: 0%;
+    color: rgb(214, 186, 140);
+    font-family: "Lucida Handwriting", cursive;
+    font-size: 20px;
+    font-weight: bold;
+}
+.dropdown{
+    width: 130%;
+    background-color: #252424;
+    padding-left: 30%;
+    padding-top: 40%;
+    padding-bottom: 40%;
+    position: relative;
+    margin-left: 500%;
+}
+div p {
+    margin: 0;
+    color: white;
+    display: block;
+    text-decoration: none;
+}
+.submenu {
+    display: none;
+    position: absolute;
+    top: 128%;
+    left: 0;
+    padding: 20px;
+    background-color: #444;
+    list-style: none;
+    z-index: 10;
+}
+.submenu div h5 {
+    padding: 10px;
+    color: white;
+    display: block;
+    text-decoration: none;
+}
+.submenu div h5:hover {
+    background-color: #666;
+}
+.dropdown:hover .submenu {
+    display: block;
+}
+.Img_Fondo{
+    width: 100%;
+}
+.producto { 
+    margin-bottom: 10px;
+}
+button { 
+    margin-left: 10px; 
+}
+#carrito { 
+    margin-top: 20px; 
+}
+.oculto {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.6s ease-out;
+}
+.animado {
+    opacity: 1;
+    transform: translateY(0);
+}
+h1{
+    color:rgb(214, 186, 140);
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    font-size: 500%;
+}
+h2{
+    box-shadow: 0 2px rgb(211, 146, 43);
+    padding-bottom: 2%;
+    padding-left: 42%;
+    color: aliceblue;
+}
+.IMG_Teatro{
+    width: 80%;
+}
+.caja_entradas{
+    margin-right: 5%;
+    box-shadow: 0px 0px 5px 5px rgb(219, 42, 42);
+}

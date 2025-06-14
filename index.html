@@ -1,0 +1,98 @@
+<html>
+<head>
+    <link rel="Stylesheet" href="Styles.css">
+</head>
+<body>
+    <div class="barra-superior">
+        <div class="seccion-izquierda">
+            <div class="Logo">Ablibitum Musicale</div>
+        </div>
+        <div class="seccion-central">
+            <div class="dropdown">
+                <div class="Carrito"><p>Carrito</p></div>
+                <div class="submenu">
+                    <h5>Entradas</h5>
+                    <ul id="carrito"></ul>
+                    <p id="total">Total: $0</p>
+                </div>
+            </div>
+        </div>
+        <div class="seccion-derecha">
+            <img class="IMG_Logo" src="Ablibitum_Logo.PNG">
+        </div>
+    </div>
+    <img class="IMG_Fondo" src="Ablibitum_Fondo.webp">
+    <h1 class="animar oculto">01 de Noviembre - Teatro Palermo</h1>
+    <h1 class="animar oculto">18:00 Horas</h1>
+    <div class="contenedor">
+        <div class="seccion-izquierda">
+            <img class="IMG_Teatro" src="Teatro.jpg">
+        </div>
+        <div class="seccion-derecha caja_entradas">
+            <h2>Entradas</h2>
+            <div class="producto">
+                <span class="letras">Camisa - $20</span>
+                <button onclick="agregarAlCarrito('Camisa', 20)">Agregar al carrito</button>
+            </div>
+            <div class="producto">
+                <span class="letras">Pantalón - $35</span>
+                <button onclick="agregarAlCarrito('Pantalón', 35)">Agregar al carrito</button>
+            </div>
+            <div class="producto">
+                <span>Zapatos - $50</span>
+                <button onclick="agregarAlCarrito('Zapatos', 50)">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+   <div style="height: 600px;"></div>
+    <script>
+        const observador = new IntersectionObserver((entradas) => {
+            entradas.forEach((entrada) => {
+                if (entrada.isIntersecting) {
+                    entrada.target.classList.add('animado');
+                }
+            });
+        });
+
+        document.querySelectorAll('.animar').forEach((elemento) => {
+            observador.observe(elemento);
+        });
+    </script>
+    <script>
+        function contarDivs() {
+          const divs = document.querySelectorAll(".border-h3");
+          document.getElementById("resultado").textContent = `Hay ${divs.length} hobbies en la página.`;
+        }
+    </script>
+    <script>
+        const carrito = [];
+
+        function agregarAlCarrito(nombre, precio) {
+            const productoExistente = carrito.find(item => item.nombre === nombre);
+
+            if (productoExistente) {
+                productoExistente.cantidad += 1;
+            } else {
+                carrito.push({ nombre, precio, cantidad: 1 });
+            }
+
+            actualizarCarrito();
+        }
+
+        function actualizarCarrito() {
+            const lista = document.getElementById('carrito');
+            lista.innerHTML = '';
+
+            let total = 0;
+            carrito.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = `${item.nombre} - $${item.precio} x ${item.cantidad}`;
+                lista.appendChild(li);
+                total += item.precio * item.cantidad;
+            });
+
+            document.getElementById('total').textContent = `Total: $${total}`;
+        }
+    </script>
+</body>
+</html>
