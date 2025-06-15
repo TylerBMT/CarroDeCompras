@@ -8,12 +8,12 @@
             <div class="Logo">Ablibitum Musicale</div>
         </div>
         <div class="seccion-central">
-            <div class="dropdown">
-                <div class="Carrito"><p>Carrito</p></div>
+            <div class="Bposicion">
+                <button class="Carrito" onclick="ClickCarrito">Carrito</button>
                 <div class="submenu">
                     <h5>Entradas</h5>
                     <ul id="carrito"></ul>
-                    <p id="total">Total: $0</p>
+                    <p id="total">Total: $0 </p>
                 </div>
             </div>
         </div>
@@ -30,21 +30,36 @@
         </div>
         <div class="seccion-derecha caja_entradas">
             <h2>Entradas</h2>
-            <div class="producto">
-                <span class="letras">Camisa - $20</span>
-                <button onclick="agregarAlCarrito('Camisa', 20)">Agregar al carrito</button>
-            </div>
-            <div class="producto">
-                <span class="letras">Pantalón - $35</span>
-                <button onclick="agregarAlCarrito('Pantalón', 35)">Agregar al carrito</button>
-            </div>
-            <div class="producto">
-                <span>Zapatos - $50</span>
-                <button onclick="agregarAlCarrito('Zapatos', 50)">Agregar al carrito</button>
+            <div class="Entradas">
+                <div class="producto">
+                    <span class="letras">Primeras Filas(No Numeradas) - $30.000</span>
+                    <button class="Bcarrito" onclick="agregarAlCarrito('Primera Fila', 30000)">Agregar al carrito</button>
+                </div>
+                <div class="producto">
+                    <span class="letras">Platea Central(No Numerada) - $20.000 </span>
+                    <button class="Bcarrito" onclick="agregarAlCarrito('Platea Central', 20000)">Agregar al carrito</button>
+                </div>
+                <div class="producto">
+                    <span class="letras">Platea Derecha(No Numerada) - $15.000</span>
+                    <button class="Bcarrito" onclick="agregarAlCarrito('Platea Derecha', 15000)">Agregar al carrito</button>
+                </div>
+                <div class="producto">
+                    <span class="letras">Platea Izquierda(No Numerada) - $15.000</span>
+                    <button class="Bcarrito" onclick="agregarAlCarrito('Platea Izquierda', 15000)">Agregar al carrito</button>
+                </div>
+                <div class="producto">
+                    <span class="letras">Galería Izquierda(No Numerada) - $10.000</span>
+                    <button class="Bcarrito" onclick="agregarAlCarrito('Galería Izquierda', 10000)">Agregar al carrito</button>
+                </div>
+                <div class="producto">
+                    <span class="letras">Galería Derecha(No Numerada) - $10.000</span>
+                    <button class="Bcarrito" onclick="agregarAlCarrito('Galería Derecha', 10000)">Agregar al carrito</button>
+                </div>
             </div>
         </div>
     </div>
-   <div style="height: 600px;"></div>
+    <img class="IMG_Final" src="Ablibitum_Personas.webp">
+   <div style="height: 100px;"></div>
     <script>
         const observador = new IntersectionObserver((entradas) => {
             entradas.forEach((entrada) => {
@@ -94,5 +109,29 @@
             document.getElementById('total').textContent = `Total: $${total}`;
         }
     </script>
+    <script>
+        const botonCarrito = document.querySelector('.Carrito');
+        const submenu = document.querySelector('.submenu');
+
+        let abierto = false;
+
+        botonCarrito.addEventListener('click', () => {
+            abierto = !abierto;
+            submenu.style.display = abierto ? 'block' : 'none';
+        });
+
+
+        document.addEventListener('click', (e) => {
+            if (!document.querySelector('.dropdown').contains(e.target)) {
+                submenu.style.display = 'none';
+                abierto = false;
+            }
+        });
+</script>
+
 </body>
+<footer>
+    <p class="Final">Ablibitum Musicale. Todos los derechos reservados.</p>
+    <p class="Final">Desarrollado por <span class="Yo">Gamalier Osses</span></p>
+</footer>
 </html>

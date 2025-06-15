@@ -15,7 +15,6 @@ body{
 }
 .barra-superior {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     background-color: #000000;
     color: rgb(255, 255, 255);
@@ -38,42 +37,41 @@ body{
     font-size: 20px;
     font-weight: bold;
 }
-.dropdown{
+.Bposicion{
     width: 130%;
-    background-color: #252424;
-    padding-left: 30%;
-    padding-top: 40%;
-    padding-bottom: 40%;
+    padding-left: 1%;
+    padding-top: 15%;
+    padding-bottom: 15%;
     position: relative;
     margin-left: 500%;
+}
+.Carrito{
+    color: azure;
+    font-size: medium;
+    background-color: #42370f;
+    padding-top: 15%;
+    padding-bottom: 15%;
+    padding-right: 12%;
 }
 div p {
     margin: 0;
     color: white;
     display: block;
-    text-decoration: none;
 }
 .submenu {
-    display: none;
     position: absolute;
-    top: 128%;
+    top: 122%;
     left: 0;
+    right: -230;
     padding: 20px;
     background-color: #444;
-    list-style: none;
-    z-index: 10;
 }
 .submenu div h5 {
     padding: 10px;
     color: white;
-    display: block;
-    text-decoration: none;
 }
 .submenu div h5:hover {
     background-color: #666;
-}
-.dropdown:hover .submenu {
-    display: block;
 }
 .Img_Fondo{
     width: 100%;
@@ -114,4 +112,40 @@ h2{
 .caja_entradas{
     margin-right: 5%;
     box-shadow: 0px 0px 5px 5px rgb(219, 42, 42);
+}
+.letras{
+    line-height: 3;
+    color: azure;
+    background-color: rgb(168, 122, 49);
+    font-size: larger;
+    margin-left: 1%;
+    padding-right: 10%;
+    padding-left: 10%;
+    padding-bottom: 2%;
+    padding-top: 2%;
+    box-shadow: 0px 0px 2px 2px white;
+}
+.Bcarrito{
+    background-color: azure;
+    padding: 2%;
+    font-weight: 500;
+    font-size: 83%;
+    transition: transform 0.1s ease-in-out;
+}
+.Bcarrito:hover{
+    box-shadow: 0px 0px 2px 2px rgb(168, 122, 49);
+}
+.Bcarrito:active{
+    transform: scale(1.1);
+}
+.IMG_Final{
+    width: 100%;
+    margin-top: 10%;
+}
+.Final{
+    color: azure;
+    text-align: center;
+}
+.Yo{
+    color: rgb(232, 162, 50);
 }
