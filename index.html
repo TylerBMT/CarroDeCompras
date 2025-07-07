@@ -14,51 +14,69 @@
                     <h5>Entradas</h5>
                     <ul id="carrito"></ul>
                     <p id="total">Total: $0 </p>
+                    <button onclick="cambiarContenido()">Finalizar Compra</button>
                 </div>
             </div>
         </div>
         <div class="seccion-derecha">
-            <img class="IMG_Logo" src="Ablibitum_Logo.PNG">
+            <img class="IMG_Logo" src="IMAGENES/Ablibitum_Logo.PNG">
         </div>
     </div>
-    <img class="IMG_Fondo" src="Ablibitum_Fondo.webp">
-    <h1 class="animar oculto">01 de Noviembre - Teatro Palermo</h1>
-    <h1 class="animar oculto">18:00 Horas</h1>
-    <div class="contenedor">
-        <div class="seccion-izquierda">
-            <img class="IMG_Teatro" src="Teatro.jpg">
-        </div>
-        <div class="seccion-derecha caja_entradas">
-            <h2>Entradas</h2>
-            <div class="Entradas">
-                <div class="producto">
-                    <span class="letras uno">Primeras Filas(No Numeradas) - $30.000</span>
-                    <button class="Bcarrito buno" onclick="agregarAlCarrito('Primera Fila', 30000)">Agregar al carrito</button>
-                </div>
-                <div class="producto">
-                    <span class="letras dos">Platea Central(No Numerada) - $20.000 </span>
-                    <button class="Bcarrito bdos" onclick="agregarAlCarrito('Platea Central', 20000)">Agregar al carrito</button>
-                </div>
-                <div class="producto">
-                    <span class="letras tres">Platea Derecha(No Numerada) - $15.000</span>
-                    <button class="Bcarrito btres" onclick="agregarAlCarrito('Platea Derecha', 15000)">Agregar al carrito</button>
-                </div>
-                <div class="producto">
-                    <span class="letras cuatro">Platea Izquierda(No Numerada) - $15.000</span>
-                    <button class="Bcarrito bcuatro" onclick="agregarAlCarrito('Platea Izquierda', 15000)">Agregar al carrito</button>
-                </div>
-                <div class="producto">
-                    <span class="letras cinco">Galería Izquierda(No Numerada) - $10.000</span>
-                    <button class="Bcarrito bcinco" onclick="agregarAlCarrito('Galería Izquierda', 10000)">Agregar al carrito</button>
-                </div>
-                <div class="producto">
-                    <span class="letras seis">Galería Derecha(No Numerada) - $10.000</span>
-                    <button class="Bcarrito bseis" onclick="agregarAlCarrito('Galería Derecha', 10000)">Agregar al carrito</button>
+    <main id="pagina-principal">
+        <img class="IMG_Fondo" src="IMAGENES/Ablibitum_Fondo.webp">
+        <h1 class="animar oculto">01 de Noviembre - Teatro Palermo</h1>
+        <h1 class="animar oculto">18:00 Horas</h1>
+        <div class="contenedor">
+            <div class="seccion-izquierda">
+                <img class="IMG_Teatro" src="IMAGENES/Teatro.jpg">
+            </div>
+            <div class="seccion-derecha caja_entradas">
+                <h2>Entradas</h2>
+                <div class="Entradas">
+                    <div class="producto">
+                        <span class="letras uno">Primeras Filas(No Numeradas) - $30.000</span>
+                        <button class="Bcarrito buno" onclick="agregarAlCarrito('Primera Fila', 30000)">Agregar al carrito</button>
+                    </div>
+                    <div class="producto">
+                        <span class="letras dos">Platea Central(No Numerada) - $20.000 </span>
+                        <button class="Bcarrito bdos" onclick="agregarAlCarrito('Platea Central', 20000)">Agregar al carrito</button>
+                    </div>
+                    <div class="producto">
+                        <span class="letras tres">Platea Derecha(No Numerada) - $15.000</span>
+                        <button class="Bcarrito btres" onclick="agregarAlCarrito('Platea Derecha', 15000)">Agregar al carrito</button>
+                    </div>
+                    <div class="producto">
+                        <span class="letras cuatro">Platea Izquierda(No Numerada) - $15.000</span>
+                        <button class="Bcarrito bcuatro" onclick="agregarAlCarrito('Platea Izquierda', 15000)">Agregar al carrito</button>
+                    </div>
+                    <div class="producto">
+                        <span class="letras cinco">Galería Izquierda(No Numerada) - $10.000</span>
+                        <button class="Bcarrito bcinco" onclick="agregarAlCarrito('Galería Izquierda', 10000)">Agregar al carrito</button>
+                    </div>
+                    <div class="producto">
+                        <span class="letras seis">Galería Derecha(No Numerada) - $10.000</span>
+                        <button class="Bcarrito bseis" onclick="agregarAlCarrito('Galería Derecha', 10000)">Agregar al carrito</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <img class="IMG_Final" src="Ablibitum_Personas.webp">
+        <img class="IMG_Final" src="IMAGENES/Ablibitum_Personas.webp">
+    </main>
+    <main id="pagina-secundaria">
+        <div class="carrito2">
+            <p class="titulo-compra">Detalle de Compra</p>
+            <div class="contenedor">
+                <div class="seccion-izquierda detalle" id="detalle-compra">
+                    <div style="height: 100px;"></div>
+                </div>
+                <div class="seccion-derecha">
+                    <div style="height: 50px;"></div>
+                    <p id="totales">Total: $0 </p>
+                    <button class="bpagar">PAGAR</button>
+                </div>
+            </div>
+        </div>
+    </main>
     <div style="height: 100px;"></div>
     <script>
         const observador = new IntersectionObserver((entradas) => {
@@ -90,17 +108,28 @@
 
         function actualizarCarrito() {
             const lista = document.getElementById('carrito');
+            const detalleCompra = document.getElementById('detalle-compra');
+
             lista.innerHTML = '';
+            detalleCompra.innerHTML = '';
 
             let total = 0;
+
             carrito.forEach(item => {
                 const li = document.createElement('li');
                 li.textContent = `${item.nombre} - $${item.precio} x ${item.cantidad}`;
                 lista.appendChild(li);
+
+                const p = document.createElement('p');
+                p.textContent = `${item.nombre} - $${item.precio} x ${item.cantidad}`;
+                p.style.color = 'white';
+                p.style.padding = '5px';
+                detalleCompra.appendChild(p);
+
                 total += item.precio * item.cantidad;
             });
-
             document.getElementById('total').textContent = `Total: $${total}`;
+            document.getElementById('totales').textContent = `Total: $${total}`;
         }
     </script>
     <script>
@@ -121,7 +150,13 @@
                 abierto = false;
             }
         });
-</script>
+    </script>
+    <script>
+        function cambiarContenido() {
+            document.getElementById("pagina-principal").style.display = "none";
+            document.getElementById("pagina-secundaria").style.display = "block";
+        }
+    </script>
 
 </body>
 <footer>

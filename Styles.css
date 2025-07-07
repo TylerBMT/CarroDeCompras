@@ -2,6 +2,9 @@ body{
     background-color: rgb(0, 0, 0);
     font-family: Arial, sans-serif;
 }
+main {
+  padding-top: 100px; /* para que no se esconda bajo la barra superior fija */
+}
 .contenedor{
     display: flex;
     flex-direction: row;
@@ -59,6 +62,7 @@ div p {
     display: block;
 }
 .submenu {
+    display: none;
     position: absolute;
     top: 122%;
     left: 0;
@@ -174,6 +178,24 @@ h2{
 .IMG_Final{
     width: 100%;
     margin-top: 10%;
+}
+.pagina-secundaria{
+    display: none;
+}
+.carrito2{
+    background-color: #444;
+    box-shadow: 0px 0px 2px 2px #666;
+}
+.titulo-compra{
+    color: azure;
+    text-align: center;
+    font-size: xx-large;
+}
+.detalle{
+    text-align: center;
+}
+.bpagar{
+    size: 20%;
 }
 .Final{
     color: azure;
